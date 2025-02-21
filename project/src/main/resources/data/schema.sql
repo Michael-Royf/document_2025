@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
                                      bio CHARACTER VARYING(255) DEFAULT NULL,
                                      reference_id CHARACTER VARYING(255) NOT NULL,
                                      qr_code_secret CHARACTER VARYING(255) DEFAULT NULL,
-                                     qr_code_image_uri TEXT DEFAULT NULL,
+                                     qr_code_image_uri text DEFAULT NULL,
                                      image_url CHARACTER VARYING(255) DEFAULT 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
                                      last_login TIMESTAMP(6) WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
                                      login_attempts INTEGER DEFAULT 0,

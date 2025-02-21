@@ -18,44 +18,42 @@ import static com.michael.document.utils.EmailUtils.getResetPasswordMessage;
 public class EmailServiceImpl implements EmailService {
     private static final String NEW_USER_ACCOUNT_VERIFICATION = "New User Account Verification";
     private static final String PASSWORD_RESET_REQUEST = "Password Reset Request";
-    private final JavaMailSender sender;
+
+    private final JavaMailSender mailSender;
 
     //    @Value("${spring.mail.verify.host}")
-//    private String host;
-//    @Value("${spring.mail.username}")
-//    private String fromEmail;
-
     private String host = "http://localhost:8080";
-    private String fromEmail = "support_Michael_Royf@gmail.com";
+    //   @Value("${spring.mail.username}")
+    private String fromEmail = "supportRoyf@gmail.com";
 
-    @Async
+
     @Override
-    public void sendNewAccountEmail(String name, String toEmail, String token) {
+    @Async
+    public void sendNewAccountEmail(String name, String email, String key) {
         try {
-            var message = new SimpleMailMessage();
+            SimpleMailMessage message = new SimpleMailMessage();
             message.setSubject(NEW_USER_ACCOUNT_VERIFICATION);
             message.setFrom(fromEmail);
-            message.setTo(toEmail);
-            message.setText(getEmailMessage(name, host, token));
+            message.setTo(email);
+            message.setText(getEmailMessage(name, host, key));
+            mailSender.send(message);
         } catch (Exception exception) {
-            log.error(exception.getMessage());
-            throw new ApiException("Unable to send email");
+            throw new ApiException("UNABLE_TO_SEND_EMAIL");
         }
     }
 
-    @Async
     @Override
-    public void sendPasswordResetEmail(String name, String toEmail, String token) {
+    @Async
+    public void sendPasswordResetEmail(String name, String email, String key) {
         try {
-            var message = new SimpleMailMessage();
+            SimpleMailMessage message = new SimpleMailMessage();
             message.setSubject(PASSWORD_RESET_REQUEST);
             message.setFrom(fromEmail);
-            message.setTo(toEmail);
-            message.setText(getResetPasswordMessage(name, host, token));
-            sender.send(message);
+            message.setTo(email);
+            message.setText(getResetPasswordMessage(name, host, key));
+            mailSender.send(message);
         } catch (Exception exception) {
-            log.error(exception.getMessage());
-            throw new ApiException("Unable to send email");
+            throw new ApiException("UNABLE_TO_SEND_EMAIL");
         }
     }
 }

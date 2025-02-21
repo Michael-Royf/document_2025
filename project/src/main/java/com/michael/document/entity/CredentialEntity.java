@@ -2,10 +2,7 @@ package com.michael.document.entity;
 
 import com.fasterxml.jackson.annotation.*;
 import com.michael.document.entity.base.Auditable;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -15,17 +12,20 @@ import org.hibernate.annotations.OnDeleteAction;
 @Getter
 @Setter
 @Builder
+@Entity
 @Table(name = "credentials")
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class CredentialEntity extends Auditable {
     private String password;
-    @OneToMany(targetEntity = UserEntity.class, fetch = FetchType.EAGER)
+
+    @OneToOne(targetEntity = UserEntity.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     @JsonIdentityReference(alwaysAsId = true)
     @JsonProperty("user_id")
-    private UserEntity user;
+    private UserEntity userEntity;
+
 }
 //@OneToOne: Указывает, что между CredentialEntity и UserEntity существует отношение один-к-одному.
 //        targetEntity = UserEntity.class: Указывает, что связанная сущность — это UserEntity.

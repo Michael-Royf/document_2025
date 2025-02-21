@@ -2,10 +2,7 @@ package com.michael.document.entity;
 
 import com.fasterxml.jackson.annotation.*;
 import com.michael.document.entity.base.Auditable;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -17,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
+@Entity
 @Table(name = "confirmations")
 @JsonInclude(JsonInclude.Include.NON_DEFAULT)
 public class ConfirmationEntity extends Auditable {
