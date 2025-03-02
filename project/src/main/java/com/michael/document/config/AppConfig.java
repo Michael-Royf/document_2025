@@ -2,18 +2,30 @@ package com.michael.document.config;
 
 import com.michael.document.entity.RoleEntity;
 import com.michael.document.entity.base.RequestContext;
-import com.michael.document.enumeration.Authority;
-import com.michael.document.repository.RoleRepository;
-import com.michael.document.repository.UserRepository;
+import com.michael.document.enumerations.Authority;
+import com.michael.document.repositories.RoleRepository;
+import com.michael.document.repositories.UserRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.stereotype.Component;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import static com.michael.document.constants.AppConstant.STRENGTH;
 
 @Configuration
 public class AppConfig {
 
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(STRENGTH);
+    }
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
     @Bean
     CommandLineRunner commandLineRunner(RoleRepository roleRepository, UserRepository userRepository) {
         return args -> {

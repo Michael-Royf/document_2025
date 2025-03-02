@@ -1,7 +1,6 @@
 package com.michael.document.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.michael.document.exceptions.ApiException;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

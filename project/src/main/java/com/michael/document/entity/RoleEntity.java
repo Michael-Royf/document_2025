@@ -2,7 +2,7 @@ package com.michael.document.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.michael.document.entity.base.Auditable;
-import com.michael.document.enumeration.Authority;
+import com.michael.document.enumerations.Authority;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;

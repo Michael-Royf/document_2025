@@ -1,7 +1,7 @@
 package com.michael.document.event.listener;
 
 import com.michael.document.event.UserEvent;
-import com.michael.document.service.EmailService;
+import com.michael.document.services.EmailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
