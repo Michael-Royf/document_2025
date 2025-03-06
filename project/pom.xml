@@ -99,6 +99,20 @@
             <artifactId>totp</artifactId>
             <version>1.7.1</version>
         </dependency>
+
+<!--        для работы с файлами и папками-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.16.1</version>
+        </dependency>
+
+        <!--password validation-->
+        <dependency>
+            <groupId>org.passay</groupId>
+            <artifactId>passay</artifactId>
+            <version>1.6.4</version>
+        </dependency>
     </dependencies>
 
     <build>

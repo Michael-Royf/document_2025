@@ -2,7 +2,7 @@ package com.michael.document.security;
 
 import com.michael.document.domain.ApiAuthentication;
 import com.michael.document.domain.UserPrincipal;
-import com.michael.document.exception.ApiException;
+import com.michael.document.exception.payload.ApiException;
 import com.michael.document.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.*;
@@ -14,8 +14,6 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 import java.util.function.Consumer;
 import java.util.function.Function;
-
-import static com.michael.document.constants.AppConstant.NINETY_DAYS;
 
 @Component
 @RequiredArgsConstructor

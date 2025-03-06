@@ -10,12 +10,13 @@ import lombok.*;
 public class User {
     private Long id;
     private String userId;
+    private String username;
     private String firstName;
     private String lastName;
     private String email;
     private String phone;
     private String bio;
-    private String profileImageURL;
+    private String avatarUrl;
     private String qrCodeImageUri;
     private String lastLogin;
     private Long createdBy;

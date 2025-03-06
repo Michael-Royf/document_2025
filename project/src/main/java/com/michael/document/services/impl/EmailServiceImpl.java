@@ -1,6 +1,6 @@
 package com.michael.document.services.impl;
 
-import com.michael.document.exception.ApiException;
+import com.michael.document.exception.payload.ApiException;
 import com.michael.document.services.EmailService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -5,7 +5,7 @@ import com.michael.document.domain.User;
 import com.michael.document.entity.CredentialEntity;
 import com.michael.document.entity.RoleEntity;
 import com.michael.document.entity.UserEntity;
-import com.michael.document.exception.ApiException;
+import com.michael.document.exception.payload.ApiException;
 import dev.samstevens.totp.code.HashingAlgorithm;
 import dev.samstevens.totp.qr.QrData;
 import dev.samstevens.totp.qr.ZxingPngQrGenerator;

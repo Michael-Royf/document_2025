@@ -1,6 +1,6 @@
 package com.michael.document.domain;
 
-import com.michael.document.exception.ApiException;
+import com.michael.document.exception.payload.ApiException;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

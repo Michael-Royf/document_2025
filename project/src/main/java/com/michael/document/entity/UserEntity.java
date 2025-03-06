@@ -20,6 +20,9 @@ public class UserEntity extends Auditable {
 
     @Column(updatable = false, unique = true, nullable = false)
     private String userId;
+
+    @Column(name = "username", unique = true, nullable = false, length = 50)
+    private String username;
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @Column(name = "last_name", nullable = false)
@@ -30,7 +33,7 @@ public class UserEntity extends Auditable {
     private LocalDateTime lastLogin;
     private String phone;
     private String bio;
-    private String imageUrl;
+    private String avatarUrl;
     private boolean accountNonExpired;
     private boolean accountNonLocked;
     private boolean enabled;
@@ -49,4 +52,13 @@ public class UserEntity extends Auditable {
                     name = "role_id", referencedColumnName = "id"))
     private RoleEntity roles;
 
+    // Связь с аватаром
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "avatar_id")  // Это поле будет хранить внешний ключ для аватара
+    private AvatarEntity avatar;
+
+
+    public String getFullName() {
+        return this.firstName + " " + this.lastName;
+    }
 }

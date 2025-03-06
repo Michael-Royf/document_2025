@@ -69,4 +69,43 @@ public class AppConstant {
     public static final String SUPER_ADMIN_AUTHORITIES = "user:create,user:read,user:update,user:delete,document:create,document:read,document:update,document:delete";
     public static final String MANAGER_AUTHORITIES = "document:create,document:read,document:update,document:delete";
 
+
+    public static final String USERNAME_ALREADY_EXISTS = "Username already exists";
+    public static final String EMAIL_ALREADY_EXISTS = "Email already exists";
+    public static final String NO_USER_FOUND_BY_USERNAME = "No user found by username: %s";
+    public static final String NO_USER_FOUND_BY_EMAIL = "No user found by email: %s ";
+    public static final String NO_USER_FOUND_BY_ID = "No user found by ID: %s";
+    public static final String NO_ROLE_FOUND_BY_NAME = "No role found by name: %s";
+    public static final String NOT_FOUND = "Not found";
+    public static final String INCORRECT_PASSWORD = "Incorrect password";
+    public static final String USER_DELETED = "User with username: %s was deleted";
+    public static final String USER_CREDENTIAL_NOT_FOUND = "Unable to find user credential";
+    public static final String TOKEN_NOT_FOUND = "Unable to find token";
+    public static final String INCORRECT_TOKEN = "Incorrect token";
+    //   public static final String EXISTING_PASSWORD_INCORRECT = "Existing password is incorrect";
+    public static final String INVALID_QR_CODE = "Invalid QR code. Please try again";
+    public static final String CONFIRMATION_INFORMATION_NOT_FOUND = "Confirmation information not found";
+
+
+    //pagination
+    public static final String DEFAULT_PAGE_NUMBER = "0";
+    public static final String DEFAULT_PAGE_SIZE = "10";
+    public static final String DEFAULT_SORT_BY = "name";
+    public static final String DEFAULT_SORT_DIRECTION = "asc";
+
+
+    //
+    public static final String USER_AVATAR_PATH = "/avatar/";
+    public static final String JPG_EXTENSION = "jpg";
+    public static final String PNG_EXTENSION = ".png";
+    public static final String DOT = ".";
+    public static final String FORWARD_SLASH = "/";
+    public static final String NOT_AN_IMAGE_FILE = "%s is not an image file. Please upload an image file";
+    public static final String TEMP_AVATAR_BASE_URL = "https://robohash.org/";
+    //   public static final String PATH_PREFIX = "/api/v1/";
+    public static final String AVATAR_NOT_FOUND = "Avatar not found";
+    public static final String NO_AVATAR_FOUND_BY_FILENAME = "No avatar found by filename: %s";
+    public static final String NO_AVATAR_FOUND_BY_URL = "No avatar found by URL: %s";
+    public static final String NO_AVATAR_BY_USER = "No avatar found by user: %s";
+    //"https://cdn-icons-png.flaticon.com/512/149/149071.png"
 }

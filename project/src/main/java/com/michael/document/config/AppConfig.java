@@ -17,15 +17,12 @@ import static com.michael.document.constants.AppConstant.STRENGTH;
 @Configuration
 public class AppConfig {
 
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(STRENGTH);
     }
-    @Bean
-    public ModelMapper modelMapper() {
-        return new ModelMapper();
-    }
+
+
     @Bean
     CommandLineRunner commandLineRunner(RoleRepository roleRepository, UserRepository userRepository) {
         return args -> {
@@ -59,4 +56,9 @@ public class AppConfig {
             RequestContext.start();
         };
     }
+
+    //    @Bean
+//    public AuditorAware<Long> auditorAware() {
+//        return new ApplicationAuditAware();
+//    }
 }
